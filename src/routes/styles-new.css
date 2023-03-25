@@ -1,25 +1,87 @@
-.new-post h2{
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2.5rem;
-    font-size: 2.3rem;
-}
-form{
-    max-width: 500px;
-    width: 100%;
-    margin: 0 auto;
-}
-.form-control{
+.containerItens{
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
 }
-.form-control label{
-    margin-bottom: 1rem;
+.containerItens h2{
+    font-size: 2.5rem;
+    margin-top: 45px;
+    letter-spacing: 3px;
 }
-.form-control input,
-.form-control textarea{
-    padding: 1rem;
+.conteudo{
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 5px;
+}
+.containerItens input{
+    width: 300px;
+    height: 40px;
     border-radius: 5px;
     border: none;
+    outline: none;
+    text-indent: 10px;
 }
+.containerItens textarea{
+    min-width: 300px;
+    max-width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-indent: 10px;
+    text-align: left;
+}
+.btn-b{
+    background-color: #ffff;
+    margin-top: 20px;
+    color: #0e1217;
+    border: 1px solid #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    max-width: 100px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-b:hover{
+    color: #fff;
+    background-color:#0e1217 ;
+}
+.containerList{
+    display: flex;
+    flex-direction: column;
+    background-color: #17191F;
+    width: 500px;
+    height: 150px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    gap: 15px;
+    text-indent: 20px;
+    border: 1px solid #fff;
+}
+.description{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff10;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    height: 25px;
+
+}
+.description button {
+ background-color:transparent;
+ border: none;
+ cursor: pointer;
+}
+.description img{
+    height: 20px;
+    width: 20px;
+    margin-top: 3px;
+    margin-right: 5px;
+    transform: rotate(43deg);
+}
+
