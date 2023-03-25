@@ -7,20 +7,10 @@ import fechar from "../assets/xx.png"
 
 
 function NewPost() {
-  //const users = []
+  
   const [users, setUsers] = useState([])
   const inputTitle = useRef()
   const textConteudo = useRef()
-  const [message, setMessage] = useState("");
-  const [val, setVal] = useState("");
-
-
-  const handleChange = (event) => {
-    const result = event.target.value.replace(/[^a-z]/gi, "");
-
-    setMessage(result);
-  };
-
 
   function addNewPost() {
 
@@ -28,8 +18,6 @@ function NewPost() {
       alert("ERROR")
     } else {
       setUsers([...users, { id: Math.random(), title: inputTitle.current.value, conteudo: textConteudo.current.value }])
-
-      setMessage("");
     }
 
   }
@@ -46,14 +34,10 @@ function NewPost() {
         <h2>Adicione um post</h2>
 
         <label className='conteudo'>Title</label>
-        <input ref={inputTitle} placeholder='Digite seu titolo' name="message"
-          type="text"
-          value={message}
-          onChange={handleChange} />
+        <input ref={inputTitle} placeholder='Digite seu titolo' />
 
         <label className='conteudo'>Conteudo</label>
-        <textarea ref={textConteudo} placeholder='Digite seu conteudo' type="text"
-          value={val} onChange={() => setVal("")} />
+        <textarea ref={textConteudo} placeholder='Digite seu conteudo' type="text" />
 
         <button className='btn-b' onClick={addNewPost} >Criar post</button>
         <ul>

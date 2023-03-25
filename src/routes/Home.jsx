@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import blogFecth from "../axios/config"
 import { Link } from 'react-router-dom'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/Navbar/index'
 import "./styles-home.css"
 
 
