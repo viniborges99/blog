@@ -14,9 +14,8 @@ function NewPost() {
 
   function addNewPost() {
     
-    console.log({ title: inputTitle,conteudo: text})
     if (inputTitle === "" || text === "") {
-      alert("ERROR")
+      alert("OS CAMPOS NÃO FORAM PREENCHIDOS CORRETAMENTE")
     } else {
       setUsers([...users, { id: Math.random(), title: inputTitle, conteudo: text}])
     }
@@ -35,15 +34,16 @@ function NewPost() {
     <div className='container'>
       <Navbar />
       <div className='containerItens'>
-        <h2>Adicione um post</h2>
+        <h2>Adicione um Post</h2>
+        
 
-        <label className='conteudo'>Title</label>
+        <label className='conteudo'>Titulo</label>
         <input value={inputTitle} onChange={(e)=> setInputTitle(e.target.value)} placeholder='Digite seu titolo' />
 
-        <label className='conteudo'>Conteudo</label>
+        <label className='conteudo'>Conteúdo</label>
         <textarea value={text} onChange={(e)=> setText(e.target.value)} placeholder='Digite seu conteudo' type="text" />
 
-        <button className='btn-b' onClick={addNewPost} >Criar post</button>
+        <button className='btn-b' onClick={addNewPost} >Criar Post</button>
         <ul>
           {users.map((user) => (
             <div key={user.id}>
