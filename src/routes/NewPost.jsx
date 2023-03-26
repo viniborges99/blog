@@ -9,18 +9,22 @@ import fechar from "../assets/xx.png"
 function NewPost() {
   
   const [users, setUsers] = useState([])
-  const inputTitle = useRef()
-  const textConteudo = useRef()
+  const [inputTitle, setInputTitle]= useState("")
+  const [text, setText]= useState("")
 
   function addNewPost() {
-
-    if (inputTitle.current.value === "" || textConteudo.current.value === "") {
+    
+    console.log({ title: inputTitle,conteudo: text})
+    if (inputTitle === "" || text === "") {
       alert("ERROR")
     } else {
-      setUsers([...users, { id: Math.random(), title: inputTitle.current.value, conteudo: textConteudo.current.value }])
+      setUsers([...users, { id: Math.random(), title: inputTitle, conteudo: text}])
     }
-
+    
+    setInputTitle("")
+    setText("")
   }
+  
 
   function deletePost(userId) {
     const newPost = users.filter(user => user.id !== userId)
@@ -34,10 +38,10 @@ function NewPost() {
         <h2>Adicione um post</h2>
 
         <label className='conteudo'>Title</label>
-        <input ref={inputTitle} placeholder='Digite seu titolo' />
+        <input value={inputTitle} onChange={(e)=> setInputTitle(e.target.value)} placeholder='Digite seu titolo' />
 
         <label className='conteudo'>Conteudo</label>
-        <textarea ref={textConteudo} placeholder='Digite seu conteudo' type="text" />
+        <textarea value={text} onChange={(e)=> setText(e.target.value)} placeholder='Digite seu conteudo' type="text" />
 
         <button className='btn-b' onClick={addNewPost} >Criar post</button>
         <ul>
